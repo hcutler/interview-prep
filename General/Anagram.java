@@ -16,8 +16,9 @@ public class Anagram {
 
   }
 
+  //fix this. need to have way of checking if s and t are both proper words
   public static boolean anagram(String s, String t) {
-    boolean status;
+    boolean status = true;
     if (s.length() != t.length()) {
       status = false;
     }
@@ -44,11 +45,12 @@ public class Anagram {
       String s2 = pair[1];
 
       //first check: are the strings permutations of one another?
-      boolean isAnagram = permutation(s1, s2);
-      System.out.println(s1 + ", " + s2 + ": " + isAnagram);
+      boolean isPermutation = permutation(s1, s2);
+      System.out.println(s1 + ", " + s2 + " are permutations? : " + isPermutation);
 
-      //second check: are the strings anagrams of one another?
-      System.out.println(anagram(s1, s2));
+      //second check: are the strings anagrams of one another (both must be actual words)?
+      boolean isAnagram = anagram(s1, s2);
+      System.out.println(s1 + ", " + s2 + " are anagrams? : " + isAnagram);
 
     }
 
